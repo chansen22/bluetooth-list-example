@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bluetooth List View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="BluetoothListViewController" customModule="BluetoothList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pfD-cl-BTi">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BluetoothListTableViewCell" rowHeight="102" id="e4r-dl-edi" customClass="BluetoothListTableViewCell" customModule="BluetoothList" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="102"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e4r-dl-edi" id="j4P-41-KoX">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="102"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYu-vb-FWv">
+                                                    <rect key="frame" x="20" y="10.999999999999998" width="325" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="T4Q-6n-d5x">
+                                                    <rect key="frame" x="353" y="11.333333333333336" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="d3z-ab-bVB">
+                                                    <rect key="frame" x="20" y="41" width="353" height="50"/>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mYu-vb-FWv" firstAttribute="leading" secondItem="j4P-41-KoX" secondAttribute="leading" constant="20" symbolic="YES" id="9xr-Fu-v4n"/>
+                                                <constraint firstItem="mYu-vb-FWv" firstAttribute="top" secondItem="j4P-41-KoX" secondAttribute="top" constant="11" id="NTK-bM-PLv"/>
+                                                <constraint firstItem="d3z-ab-bVB" firstAttribute="top" secondItem="mYu-vb-FWv" secondAttribute="bottom" constant="9.6666666666666714" id="VLL-Fs-HFS"/>
+                                                <constraint firstItem="T4Q-6n-d5x" firstAttribute="leading" secondItem="mYu-vb-FWv" secondAttribute="trailing" constant="8" symbolic="YES" id="aie-en-93j"/>
+                                                <constraint firstAttribute="trailing" secondItem="d3z-ab-bVB" secondAttribute="trailing" constant="20" symbolic="YES" id="bFV-jn-BvG"/>
+                                                <constraint firstAttribute="bottom" secondItem="d3z-ab-bVB" secondAttribute="bottom" constant="11" id="iQ1-d9-DDF"/>
+                                                <constraint firstAttribute="trailing" secondItem="T4Q-6n-d5x" secondAttribute="trailing" constant="20" symbolic="YES" id="mlV-s1-Opr"/>
+                                                <constraint firstItem="T4Q-6n-d5x" firstAttribute="centerY" secondItem="mYu-vb-FWv" secondAttribute="centerY" id="oqr-2S-vBm"/>
+                                                <constraint firstItem="d3z-ab-bVB" firstAttribute="leading" secondItem="j4P-41-KoX" secondAttribute="leading" constant="20" symbolic="YES" id="ovw-6x-h7N"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="loadingActivityIndicator" destination="T4Q-6n-d5x" id="FGf-vX-9qz"/>
+                                            <outlet property="nameLabel" destination="mYu-vb-FWv" id="WOA-gA-dzu"/>
+                                            <outlet property="servicesStackView" destination="d3z-ab-bVB" id="lkU-h5-yD5"/>
+                                            <outlet property="stackViewTopConstraint" destination="VLL-Fs-HFS" id="fha-1Y-Alu"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="9GP-mR-CTc"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="vOr-Pe-bhG"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pfD-cl-BTi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="dWB-Rc-xks"/>
+                            <constraint firstAttribute="bottom" secondItem="pfD-cl-BTi" secondAttribute="bottom" id="jU7-2O-m6J"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pfD-cl-BTi" secondAttribute="trailing" id="nNB-cc-90L"/>
+                            <constraint firstItem="pfD-cl-BTi" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="tmJ-ZF-kt9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="pfD-cl-BTi" id="20i-9f-JH5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.824427480916029" y="-7.042253521126761"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
